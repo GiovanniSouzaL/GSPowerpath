@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Estilos Gerais */
+@layer base {
+  body {
+    @apply m-0 p-0 font-sans bg-white text-gray-600;
+  }
+
+  h1, h2, h3, h4, h5, h6, p, ul, ol, li, button {
+    @apply m-0 p-0 box-border;
+  }
+
+  h1 { @apply text-5xl font-bold text-center text-gray-800 leading-tight; }
+  h2 { @apply text-4xl font-semibold text-center text-teal-700 leading-snug; }
+  h3 { @apply text-3xl font-medium text-center text-gray-600 leading-normal; }
+  h4, h5, h6 { @apply text-xl font-normal text-center text-gray-500 leading-relaxed; }
+}
 
 /* Componentes: Cabeçalho */
 @layer components {
