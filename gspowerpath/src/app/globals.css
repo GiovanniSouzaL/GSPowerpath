@@ -114,3 +114,30 @@
     @apply opacity-90;
   }
 }
+
+/* Componentes: Sobre */
+@layer components {
+  .about-block {
+    @apply flex flex-wrap items-center justify-center gap-8 mb-16;
+  }
+
+  .about-image {
+    @apply rounded shadow-md max-w-full h-auto w-full md:w-1/4;
+  }
+
+  .about-text {
+    @apply max-w-lg leading-relaxed text-base text-center text-black w-full md:w-1/2;
+  }
+
+  .about-text p {
+    @apply mb-4;
+  }
+
+  .about-text h2 {
+    @apply text-3xl font-extrabold text-gray-900 mb-4 text-center;
+  }
+
+  .about-text strong {
+    @apply text-teal-600 font-bold;
+  }
+}
