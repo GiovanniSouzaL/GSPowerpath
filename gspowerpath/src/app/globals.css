@@ -141,3 +141,26 @@
     @apply text-teal-600 font-bold;
   }
 }
+
+/* Estilo dos parceiros */
+@layer components {
+  .partners-grid {
+    @apply grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-8;
+  }
+
+  .partner-card {
+    @apply bg-yellow-200 rounded-lg p-6 shadow-md text-center transition-transform duration-300 ease-in-out;
+  }
+
+  .partner-card:hover {
+    @apply -translate-y-1 shadow-lg;
+  }
+
+  .partner-card h4 {
+    @apply text-lg font-bold mb-2 text-black;
+  }
+
+  .partner-card img {
+    @apply max-w-[100px] mx-auto mb-4;
+  }
+}
