@@ -3,3 +3,10 @@ export type ParceiroProps = {
     name: string;
     description: string;
   };
+
+  export type IconType = "charging_station" | "eco" | "route" | "medal" | "community";
+export interface CardFuncionalidadeProps {
+  titulo: string;
+  descricao: string;
+  icone: IconType;
+}
