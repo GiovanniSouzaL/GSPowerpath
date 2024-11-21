@@ -10,3 +10,12 @@ export interface CardFuncionalidadeProps {
   descricao: string;
   icone: IconType;
 }
+
+export type Integrante = {
+  rm: string;
+  turma: string;
+  foto: string;
+  github: string;
+  linkedin: string;
+  nome: string;
+};
