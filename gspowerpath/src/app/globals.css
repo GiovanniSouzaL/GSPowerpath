@@ -56,7 +56,7 @@
 /* Componentes: Rodapé */
 @layer components {
   .footer {
-    @apply text-white py-5 w-full text-center;
+    @apply bg-gray-800 text-white py-5 w-full text-center;
   }
 
   .footer-container {
