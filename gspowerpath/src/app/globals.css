@@ -2,20 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Componentes: Rodapé */
+@layer components {
+  .footer {
+    @apply text-white py-5 w-full text-center;
   }
-}
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  .footer-container {
+    @apply max-w-[1200px] mx-auto px-5 flex flex-col items-center;
+  }
+
+  .footer p {
+    @apply m-0 text-sm;
+  }
+
+  .social-links {
+    @apply mt-2;
+  }
+
+  .social-links a {
+    @apply text-white mx-2 text-base no-underline flex items-center gap-1 transition-colors duration-300;
+  }
+
+  .social-links a:hover {
+    @apply text-teal-600;
+  }
+
+  .social-icon {
+    @apply text-lg;
+  }
 }
