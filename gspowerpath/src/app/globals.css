@@ -83,3 +83,34 @@
     @apply text-lg;
   }
 }
+
+/* Componentes: Banner */
+@layer components {
+  .banner {
+    @apply mt-10 bg-gray-800 text-white text-center py-20 mb-10;
+  }
+
+  .banner h2 {
+    @apply text-4xl font-bold mb-5;
+  }
+
+  .banner p {
+    @apply text-xl mt-2 mx-auto max-w-2xl;
+  }
+
+  .banner button {
+    @apply mt-8 mx-2 py-3 px-6 text-base rounded cursor-pointer;
+  }
+
+  .banner button:first-child {
+    @apply bg-yellow-500 text-black;
+  }
+
+  .banner button:last-child {
+    @apply bg-teal-700 text-white;
+  }
+
+  .banner button:hover {
+    @apply opacity-90;
+  }
+}
