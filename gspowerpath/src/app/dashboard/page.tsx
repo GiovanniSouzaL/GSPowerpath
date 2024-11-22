@@ -35,11 +35,14 @@ export default function Dashboard() {
     const [carroSelecionado, setCarroSelecionado] = useState<Carro | null>(null);
     const [carroEditando, setCarroEditando] = useState<Carro | null>(null);
 
+    // Redireciona para login se o usuário não estiver autenticado
     useEffect(() => {
-        if (idUsuario) {
+        if (!idUsuario) {
+            router.push("/login");
+        } else {
             fetchCarros(idUsuario);
         }
-    }, [idUsuario, fetchCarros]);
+    }, [idUsuario, fetchCarros, router]);
 
     const handleAdicionarCarro = async () => {
         try {
