@@ -21,21 +21,25 @@ export default function Login() {
     };
 
     return (
-        <div>
-            <h1>Login</h1>
+        <div className="login-container">
+            <h1 className="login-title">Login</h1>
             <input
                 type="email"
                 placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                className="login-input"
             />
             <input
                 type="password"
                 placeholder="Senha"
                 value={senha}
                 onChange={(e) => setSenha(e.target.value)}
+                className="login-input"
             />
-            <button onClick={handleLogin}>Entrar</button>
+            <button onClick={handleLogin} className="login-button">
+                Entrar
+            </button>
         </div>
     );
 }

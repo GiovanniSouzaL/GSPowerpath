@@ -17,9 +17,11 @@ export default function Dashboard() {
     };
 
     return (
-        <div>
-            <h1>Dashboard</h1>
-            <button onClick={handleAtualizarPontos}>Atualizar Pontos</button>
+        <div className="dashboard-container">
+            <h1 className="dashboard-title">Dashboard</h1>
+            <button onClick={handleAtualizarPontos} className="dashboard-button">
+                Atualizar Pontos
+            </button>
         </div>
     );
 }

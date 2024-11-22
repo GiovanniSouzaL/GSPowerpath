@@ -19,27 +19,32 @@ export default function Registrar() {
     };
 
     return (
-        <div>
-            <h1>Registrar</h1>
+        <div className="registrar-container">
+            <h1 className="registrar-title">Registrar</h1>
             <input
                 type="text"
                 placeholder="Nome"
                 value={nome}
                 onChange={(e) => setNome(e.target.value)}
+                className="registrar-input"
             />
             <input
                 type="email"
                 placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                className="registrar-input"
             />
             <input
                 type="password"
                 placeholder="Senha"
                 value={senha}
                 onChange={(e) => setSenha(e.target.value)}
+                className="registrar-input"
             />
-            <button onClick={handleRegistrar}>Registrar</button>
+            <button onClick={handleRegistrar} className="registrar-button">
+                Registrar
+            </button>
         </div>
     );
 }

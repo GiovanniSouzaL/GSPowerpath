@@ -32,28 +32,35 @@ export default function Conta() {
     };
 
     return (
-        <div>
-            <h1>Minha Conta</h1>
+        <div className="conta-container">
+            <h1 className="conta-title">Minha Conta</h1>
             <input
                 type="text"
                 placeholder="Nome"
                 value={nome}
                 onChange={(e) => setNome(e.target.value)}
+                className="conta-input"
             />
             <input
                 type="email"
                 placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                className="conta-input"
             />
             <input
                 type="password"
                 placeholder="Senha"
                 value={senha}
                 onChange={(e) => setSenha(e.target.value)}
+                className="conta-input"
             />
-            <button onClick={handleEditar}>Salvar</button>
-            <button onClick={handleExcluir}>Excluir Conta</button>
+            <button onClick={handleEditar} className="conta-button-save">
+                Salvar
+            </button>
+            <button onClick={handleExcluir} className="conta-button-delete">
+                Excluir Conta
+            </button>
         </div>
     );
 }
