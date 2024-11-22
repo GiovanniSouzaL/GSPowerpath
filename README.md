@@ -92,4 +92,4 @@ Embora o projeto tenha iniciado em **14/11/2024**, enfrentamos desafios durante 
 ---
 
 **Contribuidores:**  
-Equipe dedicada de desenvolvimento do *PowerPath*  
+Equipe dedicada de desenvolvimento do projeto *PowerPath*  
