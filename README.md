@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+=======
+# GSPowerpath
+npm install
+npm install react-icons
+npm install appwrite@latest
+OBS: repositório recomeçado
+
+>>>>>>> 6b4ee4c279a88ffeb9fc985594d183fd91dd0911
 # GSPowerPath
 
 ## *Visão Geral do Projeto*
@@ -54,6 +63,7 @@ O *PowerPath* é um aplicativo inovador projetado para auxiliar proprietários d
 ---
 
 ## *Instalação e Configuração*
+<<<<<<< HEAD
 
 ### *repositório de java*
 O back-end do *powerpath* está disponível em um repositório diferente.
@@ -63,6 +73,8 @@ https://github.com/ovitortadeu/PowerPath
 git clone https://github.com/ovitortadeu/PowerPath.git 
 
 ### *Instalação do repositório de front*
+=======
+>>>>>>> 6b4ee4c279a88ffeb9fc985594d183fd91dd0911
 1. Clone o repositório:
    ```bash
    git clone https://github.com/GiovanniSouzaL/GSPowerpath

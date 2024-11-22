@@ -22,7 +22,7 @@ const integrantes = [
     turma: "1TDSPH",
     foto: "/image/pedro.png",
     github: "https://github.com/PBPedro",
-    linkedin: "https://linkedin.com/",
+    linkedin: "https://www.linkedin.com/in/pedropaulo-barretta-828b51330/",
     nome: "Pedro Paulo Barretta",
   },
 ];
