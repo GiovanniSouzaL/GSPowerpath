@@ -1,46 +1,24 @@
-import { Usuario } from '@/types/types';
+import { useState } from 'react';
 
+export const useAuth = () => {
+    const [token, setToken] = useState<string | null>(localStorage.getItem('token'));
+    const [idUsuario, setIdUsuario] = useState<number | null>(
+        localStorage.getItem('idUsuario') ? parseInt(localStorage.getItem('idUsuario')!) : null
+    );
 
-export const useApi = () => {
-    const baseUrl = 'http://localhost:8080';
-  
-    const fetchApi = async (endpoint: string, options?: RequestInit) => {
-      const response = await fetch(`${baseUrl}${endpoint}`, options);
-      if (!response.ok) {
-        throw new Error(`Erro na API: ${response.statusText}`);
-      }
-      return response.json();
+    const login = (token: string, idUsuario: number) => {
+        setToken(token);
+        setIdUsuario(idUsuario);
+        localStorage.setItem('token', token);
+        localStorage.setItem('idUsuario', idUsuario.toString());
     };
-  
-    const createUser = (user: Usuario) =>
-      fetchApi('/usuario', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(user),
-      });
-  
-    const getUser = (id: number) =>
-      fetchApi(`/usuario/${id}`);
-  
-    const updateUser = (id: number, user: Usuario) =>
-      fetchApi(`/usuario/${id}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(user),
-      });
-  
-    const deleteUser = (id: number) =>
-      fetchApi(`/usuario/${id}`, { method: 'DELETE' });
-  
-    const updateUserPoints = (id: number) =>
-      fetchApi(`/usuario/${id}/pontos`, { method: 'POST' });
-  
-    return {
-      createUser,
-      getUser,
-      updateUser,
-      deleteUser,
-      updateUserPoints,
+
+    const logout = () => {
+        setToken(null);
+        setIdUsuario(null);
+        localStorage.removeItem('token');
+        localStorage.removeItem('idUsuario');
     };
-  };
-  
+
+    return { token, idUsuario, login, logout };
+};

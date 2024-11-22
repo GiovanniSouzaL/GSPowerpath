@@ -4,7 +4,7 @@ export type ParceiroProps = {
     description: string;
   };
 
-  export type IconType = "charging_station" | "eco" | "route" | "medal" | "community";
+export type IconType = "charging_station" | "eco" | "route" | "medal" | "community";
 export interface CardFuncionalidadeProps {
   titulo: string;
   descricao: string;
@@ -21,8 +21,13 @@ export type Integrante = {
 };
 
 export type Usuario = {
-  idUsuario?: number;
+  idUsuario?: number; 
   nome: string;
   email: string;
   senha: string;
+};
+
+export type LoginResponse = {
+  token: string;
+  idUsuario: number; 
 };
