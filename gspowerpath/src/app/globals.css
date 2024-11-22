@@ -452,3 +452,49 @@
   }
 }
 
+  /* estilos do pontos */
+@layer components {
+  .pontos-container {
+    @apply flex flex-col items-center p-8;
+  }
+
+  .pontos-title {
+    @apply text-2xl font-bold mb-8 text-center;
+  }
+
+  .pontos-section {
+    @apply mb-8 w-full max-w-lg text-center p-4 border border-gray-300 rounded-lg bg-gray-100;
+  }
+
+  .pontos-section-title {
+    @apply text-xl font-bold mb-4;
+  }
+
+  .pontos-value {
+    @apply text-xl font-bold text-yellow-500;
+  }
+
+  .pontos-ranking {
+    @apply text-sm mt-4;
+  }
+
+  .pontos-ranking-value {
+    @apply text-xl font-bold text-green-500;
+  }
+
+  .pontos-card {
+    @apply my-4 p-4 border border-gray-300 rounded-lg bg-white;
+  }
+  
+  .pontos-list {
+    @apply list-none p-0 m-0;
+  }
+
+  .pontos-list-item {
+    @apply my-2 text-sm font-bold flex items-center gap-2;
+  }
+
+  .pontos-button {
+    @apply px-4 py-2 rounded-lg text-white font-semibold;
+  }
+}
