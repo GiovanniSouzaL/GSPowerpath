@@ -498,3 +498,30 @@
     @apply px-4 py-2 rounded-lg text-white font-semibold;
   }
 }
+
+/* pagina conta */
+@layer components{
+  .centered-container {
+    @apply flex items-center justify-center h-screen bg-gray-100;
+  }
+  
+  .page-container {
+    @apply bg-white rounded-lg shadow-md p-8 max-w-md w-full;
+  }
+  
+  .page-title {
+    @apply text-2xl font-bold text-gray-800 mb-6 text-center;
+  }
+  
+  .page-input {
+    @apply w-full px-4 py-2 mb-4 border border-gray-300 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500;
+  }
+  
+  .page-button {
+    @apply w-full px-4 py-2 bg-blue-500 text-white font-semibold rounded-md shadow-sm hover:bg-blue-600 transition;
+  }
+  
+  .page-button-secondary {
+    @apply w-full px-4 py-2 text-white font-semibold rounded-md shadow-sm hover:transition;
+  }
+}
