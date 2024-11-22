@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .bg-dashboard {
+    @apply bg-gradient-to-r from-green-400 to-blue-500;
+  }
+
+  .text-dashboard {
+    @apply text-green-500 font-bold;
+  }
+}
+
 /* Estilos Gerais */
 @layer base {
   body {
@@ -323,33 +333,71 @@
   /* Estilos do Dashboard */
 @layer components {
   .dashboard-container {
-    @apply p-8 bg-white rounded-lg shadow-lg max-w-4xl mx-auto border border-teal-500;
+    @apply max-w-5xl mx-auto p-6 bg-white rounded shadow-md mt-8;
   }
+
   .dashboard-title {
-      @apply text-3xl font-bold text-center mb-6 text-teal-700;
+    @apply text-3xl font-bold mb-6 text-center text-gray-800;
   }
+
+  .dashboard-section {
+    @apply mb-8;
+  }
+
+  .dashboard-section-title {
+    @apply text-xl font-semibold mb-4 text-gray-700;
+  }
+
+  .dashboard-input {
+    @apply w-full p-2 mb-4 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-300;
+  }
+
   .dashboard-button {
-      @apply px-6 py-3 bg-teal-500 text-white rounded-lg font-medium hover:bg-teal-600 transition;
-  }
-  .page-input {
-    @apply w-full p-3 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-teal-500;
-  }
-  .centered-container {
-    @apply flex justify-center items-center h-screen;
-  }
-  .page-container {
-      @apply p-8 bg-white rounded-lg shadow-lg max-w-md w-full border border-gray-300;
-  }
-  .page-button {
-      @apply w-full py-3 bg-teal-500 text-white rounded-lg font-medium hover:bg-teal-600 transition;
+    @apply px-4 py-2 bg-green-500 text-white font-semibold rounded hover:bg-green-600 transition-all duration-200;
   }
 
-  .page-button-secondary {
-      @apply w-full py-3 bg-yellow-500 text-white rounded-lg font-medium hover:bg-yellow-600 transition;
+  .dashboard-button-secondary {
+    @apply px-4 py-2 bg-gray-500 text-white font-semibold rounded hover:bg-gray-600 transition-all duration-200;
   }
 
-  .page-error {
-      @apply text-red-500 text-sm mt-2;
+  .dashboard-card {
+    @apply flex justify-between items-center p-4 mb-4 border border-gray-300 rounded bg-gray-50 shadow-sm;
+  }
+
+  .dashboard-card-title {
+    @apply font-medium text-gray-800;
+  }
+
+  .dashboard-card-actions button {
+    @apply ml-2 px-4 py-2 font-semibold rounded transition-all duration-200;
+  }
+
+  .dashboard-card-actions .dashboard-button-secondary {
+    @apply bg-blue-500 hover:bg-blue-600 text-white;
+  }
+
+  .impact-results {
+    @apply grid grid-cols-1 gap-4 sm:grid-cols-2 mt-4;
+  }
+
+  .result-item {
+    @apply p-4 bg-gray-100 border border-gray-300 rounded shadow-sm;
+  }
+
+  .result-label {
+    @apply font-semibold text-gray-700;
+  }
+
+  .result-value {
+    @apply text-lg text-green-500 font-bold;
+  }
+
+  .modal {
+    @apply fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50;
+  }
+
+  .modal-content {
+    @apply bg-white p-6 rounded shadow-lg w-full max-w-md;
   }
 }
 
@@ -403,3 +451,4 @@
       @apply w-full py-3 bg-red-500 text-white rounded-lg font-medium hover:bg-red-600 transition mt-2;
   }
 }
+

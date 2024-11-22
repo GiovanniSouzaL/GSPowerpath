@@ -1,14 +1,39 @@
 "use client";
 
-import { useState } from 'react';
-import { editarConta, excluirConta } from '@/app/api/user/route';
-import { useApi } from '@/utils/hooks/useApi';
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { editarConta, excluirConta } from "@/app/api/user/route";
+import { useApi } from "@/utils/hooks/useApi";
 
 export default function Conta() {
     const { idUsuario, logout } = useApi();
+    const router = useRouter();
     const [nome, setNome] = useState("");
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
+
+    useEffect(() => {
+        if (!idUsuario) {
+            router.push("/login");
+            return;
+        }
+
+        // Busca os dados do usuário autenticado
+        fetch(`http://localhost:8080/usuario/${idUsuario}`)
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error("Erro ao buscar usuário");
+                }
+                return response.json();
+            })
+            .then((data) => {
+                setNome(data.nome || "");
+                setEmail(data.email || "");
+            })
+            .catch((error) =>
+                console.error("Erro ao carregar os dados do usuário:", error)
+            );
+    }, [idUsuario, router]);
 
     const handleEditar = async () => {
         try {
@@ -25,6 +50,7 @@ export default function Conta() {
             await excluirConta(idUsuario!);
             logout();
             alert("Conta excluída com sucesso!");
+            router.push("/login");
         } catch (error) {
             console.error("Erro ao excluir conta:", error);
             alert("Erro ao excluir conta");
@@ -57,9 +83,12 @@ export default function Conta() {
                     className="page-input"
                 />
                 <button onClick={handleEditar} className="page-button">
-                    Salvar
+                    Salvar Alterações
                 </button>
-                <button onClick={handleExcluir} className="page-button bg-red-500 hover:bg-red-600">
+                <button
+                    onClick={handleExcluir}
+                    className="page-button-secondary mt-4 bg-red-500 hover:bg-red-600"
+                >
                     Excluir Conta
                 </button>
             </div>

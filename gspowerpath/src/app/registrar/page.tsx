@@ -1,20 +1,31 @@
 "use client";
 
 import { useState } from 'react';
+import { useRouter } from "next/navigation";
 import { registrar } from '@/app/api/user/route';
 
 export default function Registrar() {
     const [nome, setNome] = useState("");
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
+    const router = useRouter();
 
     const handleRegistrar = async () => {
         try {
+            // Validações básicas antes do envio
+            if (!nome || !email || !senha) {
+                alert("Por favor, preencha todos os campos.");
+                return;
+            }
+
+            // Faz o registro do usuário no backend
             await registrar({ nome, email, senha });
-            alert("Usuário registrado com sucesso!");
+
+            alert("Conta registrada com sucesso! Você será redirecionado para o login.");
+            router.push("/login");
         } catch (error) {
-            console.error("Erro ao registrar usuário:", error);
-            alert("Erro ao registrar usuário");
+            console.error("Erro ao registrar:", error);
+            alert("Erro ao registrar a conta. Tente novamente.");
         }
     };
 
@@ -46,6 +57,15 @@ export default function Registrar() {
                 <button onClick={handleRegistrar} className="page-button">
                     Registrar
                 </button>
+                <p className="mt-4 text-center">
+                    Já tem uma conta?{" "}
+                    <a
+                        href="/login"
+                        className="text-teal-600 hover:underline"
+                    >
+                        Faça login aqui
+                    </a>
+                </p>
             </div>
         </div>
     );

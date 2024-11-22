@@ -21,7 +21,7 @@ export type Integrante = {
 };
 
 export interface Usuario {
-  idUsuario?: number;
+  idUsuario: number;
   nome: string;
   email: string;
   senha?: string; 
@@ -34,3 +34,13 @@ export type LoginResponse = {
   idUsuario: number; 
 };
 
+export interface Carro {
+  idCarro: number; 
+  modelo: string; 
+  marca: string; 
+  ano: number; 
+  tipo: string; 
+  quantidadeCarbono: number; 
+  recarga: number; 
+  idUsuario: number; 
+}

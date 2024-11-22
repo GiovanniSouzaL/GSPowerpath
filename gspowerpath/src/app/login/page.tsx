@@ -6,7 +6,6 @@ import { login } from '@/app/api/login/route';
 import { useApi } from '@/utils/hooks/useApi';
 
 export default function Login() {
-    const [nome, setNome] = useState("");
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
     const { login: apiLogin } = useApi();
@@ -14,13 +13,16 @@ export default function Login() {
 
     const handleLogin = async () => {
         try {
-            const data = await login(email, senha);
-            apiLogin(data.token, data.idUsuario);
+            const usuario = await login(email, senha); // Verifica as credenciais
+            apiLogin("mock-token", usuario.idUsuario); // Simula um token
             alert("Login realizado com sucesso!");
             router.push("/dashboard"); // Redireciona para o Dashboard
         } catch (error) {
-            console.error("Erro ao fazer login:", error);
-            alert("Erro ao fazer login");
+            if (error instanceof Error) {
+                alert("Email ou senha incorretos. Tente novamente."); // Mensagem amigável
+            } else {
+                alert("Erro inesperado. Tente novamente mais tarde."); // Mensagem genérica
+            }
         }
     };
 
@@ -28,13 +30,6 @@ export default function Login() {
         <div className="centered-container">
             <div className="page-container">
                 <h1 className="page-title">Login</h1>
-                <input
-                    type="text"
-                    placeholder="Nome"
-                    value={nome}
-                    onChange={(e) => setNome(e.target.value)}
-                    className="page-input"
-                />
                 <input
                     type="email"
                     placeholder="Email"
@@ -56,7 +51,7 @@ export default function Login() {
                     Não tem uma conta?{" "}
                     <a
                         href="/registrar"
-                        className="text-teal-600 hover:underline"
+                        className="text-green-600 hover:underline"
                     >
                         Registre-se aqui
                     </a>
