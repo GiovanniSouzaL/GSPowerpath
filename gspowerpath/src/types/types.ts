@@ -20,14 +20,17 @@ export type Integrante = {
   nome: string;
 };
 
-export type Usuario = {
-  idUsuario?: number; 
+export interface Usuario {
+  idUsuario?: number;
   nome: string;
   email: string;
-  senha: string;
-};
+  senha?: string; 
+  pontos?: number; 
+  status?: string; 
+}
 
 export type LoginResponse = {
   token: string;
   idUsuario: number; 
 };
+

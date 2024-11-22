@@ -312,7 +312,7 @@
   }
 
   .team-links a {
-    @apply text-sm text-green-600 no-underline transition-colors duration-300;
+    @apply text-sm text-yellow-500 no-underline transition-colors duration-300;
   }
 
   .team-links a:hover {
@@ -323,63 +323,83 @@
   /* Estilos do Dashboard */
 @layer components {
   .dashboard-container {
-      @apply p-4 bg-white rounded-lg shadow-md max-w-4xl mx-auto;
+    @apply p-8 bg-white rounded-lg shadow-lg max-w-4xl mx-auto border border-teal-500;
   }
   .dashboard-title {
-      @apply text-2xl font-bold text-center mb-4 text-gray-700;
+      @apply text-3xl font-bold text-center mb-6 text-teal-700;
   }
   .dashboard-button {
-      @apply px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition;
+      @apply px-6 py-3 bg-teal-500 text-white rounded-lg font-medium hover:bg-teal-600 transition;
+  }
+  .page-input {
+    @apply w-full p-3 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-teal-500;
+  }
+  .centered-container {
+    @apply flex justify-center items-center h-screen;
+  }
+  .page-container {
+      @apply p-8 bg-white rounded-lg shadow-lg max-w-md w-full border border-gray-300;
+  }
+  .page-button {
+      @apply w-full py-3 bg-teal-500 text-white rounded-lg font-medium hover:bg-teal-600 transition;
+  }
+
+  .page-button-secondary {
+      @apply w-full py-3 bg-yellow-500 text-white rounded-lg font-medium hover:bg-yellow-600 transition;
+  }
+
+  .page-error {
+      @apply text-red-500 text-sm mt-2;
   }
 }
 
     /* Estilos do Login */
 @layer components {
   .login-container {
-    @apply p-4 bg-white rounded-lg shadow-md max-w-sm mx-auto;
+    @apply p-8 bg-white rounded-lg shadow-lg max-w-md mx-auto border border-yellow-500;
   }
   .login-title {
-      @apply text-2xl font-bold text-center mb-4 text-gray-700;
+      @apply text-3xl font-bold text-center mb-6 text-yellow-700;
   }
   .login-input {
-      @apply w-full p-2 border border-gray-300 rounded mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500;
+      @apply w-full p-3 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-yellow-500;
   }
   .login-button {
-      @apply w-full py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition;
+      @apply w-full py-3 bg-yellow-500 text-white rounded-lg font-medium hover:bg-yellow-600 transition;
   }
 }
 
 /* Estilos do Registrar */
 @layer components {
   .registrar-container {
-    @apply p-4 bg-white rounded-lg shadow-md max-w-sm mx-auto;
+    @apply p-8 bg-white rounded-lg shadow-lg max-w-md mx-auto border border-teal-500;
   }
   .registrar-title {
-      @apply text-2xl font-bold text-center mb-4 text-gray-700;
+      @apply text-3xl font-bold text-center mb-6 text-teal-700;
   }
   .registrar-input {
-      @apply w-full p-2 border border-gray-300 rounded mb-4 focus:outline-none focus:ring-2 focus:ring-green-500;
+      @apply w-full p-3 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-teal-500;
   }
   .registrar-button {
-      @apply w-full py-2 bg-green-500 text-white rounded hover:bg-green-600 transition;
+      @apply w-full py-3 bg-teal-500 text-white rounded-lg font-medium hover:bg-teal-600 transition;
   }
 }
 
 /* Estilos da Conta */
 @layer components {
   .conta-container {
-    @apply p-4 bg-white rounded-lg shadow-md max-w-md mx-auto;
+    @apply p-8 bg-white rounded-lg shadow-lg max-w-lg mx-auto border border-yellow-500;
   }
   .conta-title {
-      @apply text-2xl font-bold text-center mb-4 text-gray-700;
+      @apply text-3xl font-bold text-center mb-6 text-yellow-700;
   }
   .conta-input {
-      @apply w-full p-2 border border-gray-300 rounded mb-4 focus:outline-none focus:ring-2 focus:ring-yellow-500;
+      @apply w-full p-3 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-yellow-500;
   }
   .conta-button-save {
-      @apply w-full py-2 bg-yellow-500 text-white rounded hover:bg-yellow-600 transition;
+      @apply w-full py-3 bg-yellow-500 text-white rounded-lg font-medium hover:bg-yellow-600 transition;
   }
   .conta-button-delete {
-      @apply w-full py-2 bg-red-500 text-white rounded hover:bg-red-600 transition mt-2;
+      @apply w-full py-3 bg-red-500 text-white rounded-lg font-medium hover:bg-red-600 transition mt-2;
   }
 }
