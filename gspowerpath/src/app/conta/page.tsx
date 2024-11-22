@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from 'react';
 import { editarConta, excluirConta } from '@/app/api/user/route';
 import { useApi } from '@/utils/hooks/useApi';

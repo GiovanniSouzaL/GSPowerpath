@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from 'react';
 import { registrar } from '@/app/api/user/route';
 

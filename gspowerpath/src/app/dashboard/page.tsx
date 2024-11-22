@@ -1,3 +1,5 @@
+"use client";
+
 import { atualizarPontos } from '@/app/api/pontos/route';
 import { useApi } from '@/utils/hooks/useApi';
 
