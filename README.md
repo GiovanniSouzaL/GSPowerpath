@@ -58,9 +58,8 @@ O *PowerPath* é um aplicativo inovador projetado para auxiliar proprietários d
 ### *repositório de java*
 O back-end do *powerpath* está disponível em um repositório diferente.
 Baixe o projeto e rode a classe Main para poder usar a API em Front. Clique no link abaixo para acessar:
-https://github.com/ovitortadeu/PowerPath
 1. ```bash
-git clone https://github.com/ovitortadeu/PowerPath.git 
+   git clone https://github.com/ovitortadeu/PowerPath
 
 ### *Instalação do repositório de front*
 1. Clone o repositório:
