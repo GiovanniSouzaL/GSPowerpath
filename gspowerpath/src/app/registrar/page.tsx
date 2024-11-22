@@ -11,7 +11,7 @@ export default function Registrar() {
             await registrar({ nome, email, senha });
             alert('Usuário registrado com sucesso!');
         } catch (error) {
-            console.error('Erro ao registrar usuário:', error); // Usar o error aqui
+            console.error('Erro ao registrar usuário:', error);
             alert('Erro ao registrar usuário');
         }
     };

@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { editarConta, excluirConta } from '@/app/api/user/route';
-import { useAuth } from '@/utils/hooks/useApi';
+import { useApi } from '@/utils/hooks/useApi';
 
 export default function Conta() {
-    const { idUsuario, logout } = useAuth();
+    const { idUsuario, logout } = useApi();
     const [nome, setNome] = useState('');
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
@@ -13,7 +13,7 @@ export default function Conta() {
             await editarConta(idUsuario!, { nome, email, senha });
             alert('Conta atualizada com sucesso!');
         } catch (error) {
-            console.error('Erro ao atualizar conta:', error); // Usa o error
+            console.error('Erro ao atualizar conta:', error);
             alert('Erro ao atualizar conta');
         }
     };
@@ -24,7 +24,7 @@ export default function Conta() {
             logout();
             alert('Conta excluída com sucesso!');
         } catch (error) {
-            console.error('Erro ao excluir conta:', error); // Usa o error
+            console.error('Erro ao excluir conta:', error);
             alert('Erro ao excluir conta');
         }
     };

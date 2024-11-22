@@ -1,6 +1,8 @@
+"use client";
+
 import { useState } from 'react';
 
-export const useAuth = () => {
+export const useApi = () => {
     const [token, setToken] = useState<string | null>(localStorage.getItem('token'));
     const [idUsuario, setIdUsuario] = useState<number | null>(
         localStorage.getItem('idUsuario') ? parseInt(localStorage.getItem('idUsuario')!) : null
