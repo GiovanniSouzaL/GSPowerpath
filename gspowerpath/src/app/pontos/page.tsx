@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useApi } from "@/utils/hooks/useApi";
 import { useCarros } from "@/utils/hooks/useCarro";
 
@@ -12,19 +12,25 @@ export default function PontosPage() {
     const [conquistas, setConquistas] = useState<string[]>([]);
     const [ranking, setRanking] = useState<number>(0);
 
+    const calcularPontos = useCallback(() => {
+        if (!carros || carros.length === 0) {
+            setPontos(0); // Define 0 pontos se não houver carros
+            return;
+        }
+
+        // Calcula os pontos com base na recarga dos carros
+        const totalPontos = carros.reduce((acc, carro) => acc + carro.recarga * 50, 0);
+        setPontos(totalPontos);
+    }, [carros]);
+
     useEffect(() => {
         if (idUsuario) {
             fetchCarros(idUsuario);
-            carregarPontos();
+            calcularPontos();
             carregarConquistas();
             carregarRanking();
         }
-    }, [idUsuario, fetchCarros]);
-
-    const carregarPontos = () => {
-        // Simulação de API de pontos
-        setPontos(1500); // Exemplo de pontos acumulados
-    };
+    }, [idUsuario, fetchCarros, calcularPontos]);
 
     const carregarConquistas = () => {
         // Simulação de conquistas obtidas
@@ -41,7 +47,7 @@ export default function PontosPage() {
     };
 
     return (
-        <div className="pontos-container">
+        <div className="pontos-container mt-16">
             <h1 className="pontos-title">Seus Pontos e Conquistas</h1>
 
             {/* Seção de Pontos */}
@@ -93,3 +99,4 @@ export default function PontosPage() {
         </div>
     );
 }
+    
