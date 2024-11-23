@@ -6,7 +6,7 @@ import { useCarros } from "@/utils/hooks/useCarro";
 
 export default function PontosPage() {
     const { idUsuario } = useApi();
-    const { carros, fetchCarros, atualizarPontos } = useCarros();
+    const { carros, fetchCarros } = useCarros();
 
     const [pontos, setPontos] = useState<number>(0);
     const [conquistas, setConquistas] = useState<string[]>([]);
@@ -40,21 +40,6 @@ export default function PontosPage() {
         setRanking(15); // Usuário está na posição 15
     };
 
-    const handleAtualizarPontos = async () => {
-        try {
-            await atualizarPontos(idUsuario!);
-            alert("Pontos atualizados com sucesso!");
-            carregarPontos(); // Atualiza os pontos
-        } catch (error) {
-            console.error("Erro ao atualizar pontos:", error);
-            alert(
-                error instanceof Error
-                    ? `Erro ao atualizar pontos: ${error.message}`
-                    : "Erro desconhecido ao atualizar pontos."
-            );
-        }
-    };
-
     return (
         <div className="pontos-container">
             <h1 className="pontos-title">Seus Pontos e Conquistas</h1>
@@ -63,12 +48,6 @@ export default function PontosPage() {
             <section className="pontos-section">
                 <h2 className="pontos-section-title">Seus Pontos</h2>
                 <p className="pontos-value">{pontos} pontos</p>
-                <button
-                    onClick={handleAtualizarPontos}
-                    className="pontos-button bg-yellow-500 hover:bg-yellow-600"
-                >
-                    Atualizar Pontos
-                </button>
             </section>
 
             {/* Seção de Carros */}

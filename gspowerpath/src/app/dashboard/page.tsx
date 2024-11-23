@@ -17,7 +17,6 @@ export default function Dashboard() {
         calcularEmissaoCO2,
         economiaFinanceira,
         emissaoCO2,
-        atualizarPontos,
     } = useCarros();
     const router = useRouter();
 
@@ -109,40 +108,23 @@ export default function Dashboard() {
         calcularEmissaoCO2(distancia);
     };
 
-    const handleAtualizarPontos = async () => {
-        if (!carroSelecionado) {
-            alert("Selecione um carro para atualizar os pontos.");
-            return;
-        }
-
-        if (carroSelecionado.recarga > 1) {
-            try {
-                await atualizarPontos(carroSelecionado.idCarro!);
-                alert("Pontos atualizados com sucesso!");
-            } catch (error) {
-                console.error("Erro ao atualizar pontos:", error);
-                alert(
-                    error instanceof Error
-                        ? `Erro ao atualizar pontos: ${error.message}`
-                        : "Erro desconhecido ao atualizar pontos."
-                );
-            }
-        } else {
-            alert("O carro não tem recarga suficiente para atualizar os pontos.");
-        }
-    };
-
     return (
         <div className="dashboard-container">
             <h1 className="dashboard-title">Gerenciar Carros e Impacto Ambiental</h1>
 
-            {/* Botão para Página Conta */}
-            <div className="mb-6">
+            {/* Botões para outras páginas */}
+            <div className="mb-6 flex gap-4">
                 <button
                     onClick={() => router.push("/conta")}
                     className="dashboard-button bg-blue-500 hover:bg-blue-600"
                 >
                     Ir para Minha Conta
+                </button>
+                <button
+                    onClick={() => router.push("/pontos")}
+                    className="dashboard-button bg-yellow-500 hover:bg-yellow-600"
+                >
+                    Ir para Pontos
                 </button>
             </div>
 
@@ -224,12 +206,6 @@ export default function Dashboard() {
                     className="dashboard-button bg-green-500 hover:bg-green-600"
                 >
                     Calcular Impacto
-                </button>
-                <button
-                    onClick={handleAtualizarPontos}
-                    className="dashboard-button bg-yellow-500 hover:bg-yellow-600 ml-4"
-                >
-                    Atualizar Pontos
                 </button>
             </section>
 
