@@ -53,6 +53,11 @@ O **PowerPath** é uma solução inovadora desenvolvida para simplificar a exper
 
 ---
 
+## **Video do projeto**
+https://www.youtube.com/watch?v=lc9JNqW_u5E
+
+---
+
 ## 🛠️ **Instalação e Configuração**
 
 ### **Repositório do Back-End**
